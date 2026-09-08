@@ -1,0 +1,367 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/global.css';
+---
+
+<Base
+  title="Cooper Tillotson | Marketing Operations & Product Marketing"
+  description="CRM implementation, competitive intelligence, and SEO/analytics. Moving from Marketing Coordinator into Marketing Ops, RevOps, and Product Marketing."
+>
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <p class="hero-label">Marketing Operations · Product Marketing</p>
+      <h1>Cooper Tillotson</h1>
+      <p class="hero-sub">
+        I turn CRM data, competitive research, and process gaps into systems
+        that marketing and sales teams actually use. Currently looking for
+        Marketing Ops/RevOps or Product Marketing roles.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">See my work</a>
+        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Work -->
+  <section id="work">
+    <div class="container">
+      <h2>Selected Work</h2>
+      <div class="work-grid">
+        <article class="work-card work-card--featured">
+          <span class="work-tag">Spec Project</span>
+          <h3>[Spec GTM Project Title]</h3>
+          <p>
+            [2-3 sentence summary of the spec GTM project. What was the
+            situation, what did you build, what was the measurable outcome.]
+          </p>
+          <ul class="work-highlights">
+            <li>[Key metric or deliverable]</li>
+            <li>[Key metric or deliverable]</li>
+            <li>[Key metric or deliverable]</li>
+          </ul>
+        </article>
+
+        <article class="work-card">
+          <span class="work-tag">CRM / Process</span>
+          <h3>[Simpson: CRM Implementation & Process Build]</h3>
+          <p>
+            [Summary framing this as dual-use: positioning/enablement (PMM side)
+            and automation/CRM/process (Ops side).]
+          </p>
+          <ul class="work-highlights">
+            <li>[Key metric or deliverable]</li>
+            <li>[Key metric or deliverable]</li>
+          </ul>
+        </article>
+
+        <article class="work-card">
+          <span class="work-tag">Competitive Intel</span>
+          <h3>[Competitive Intelligence Project]</h3>
+          <p>
+            [Summary of competitive research work. What you tracked, how it
+            informed positioning or sales enablement.]
+          </p>
+          <ul class="work-highlights">
+            <li>[Key metric or deliverable]</li>
+            <li>[Key metric or deliverable]</li>
+          </ul>
+        </article>
+
+        <article class="work-card">
+          <span class="work-tag">SEO / Analytics</span>
+          <h3>[SEO & Analytics Project]</h3>
+          <p>
+            [Summary of SEO or analytics work. What you measured, what you
+            improved, what the business impact was.]
+          </p>
+          <ul class="work-highlights">
+            <li>[Key metric or deliverable]</li>
+            <li>[Key metric or deliverable]</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills & Tools</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>CRM & Systems</h3>
+          <ul>
+            <li>HubSpot (implementation, workflows, reporting)</li>
+            <li>Salesforce (basic admin, reporting)</li>
+            <li>CRM data hygiene and migration</li>
+            <li>Marketing automation setup</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h3>Competitive Intelligence</h3>
+          <ul>
+            <li>Win/loss analysis</li>
+            <li>Competitor positioning tracking</li>
+            <li>Battle card creation</li>
+            <li>Market landscape mapping</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h3>SEO & Analytics</h3>
+          <ul>
+            <li>Google Analytics (GA4)</li>
+            <li>Google Search Console</li>
+            <li>Technical SEO audits</li>
+            <li>Keyword research and content strategy</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h3>Building & Learning</h3>
+          <ul>
+            <li>Process documentation and SOPs</li>
+            <li>Workflow automation (Zapier, Make)</li>
+            <li>HTML/CSS (this site)</li>
+            <li>Learning SQL for reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <div class="about-content">
+        <p>
+          [Short career arc paragraph. Where you started, the inflection point
+          at Simpson where you moved from pure marketing into ops/systems work,
+          and where you're headed. Keep it human, 3-4 sentences max.]
+        </p>
+        <p>
+          [Optional second paragraph: what you're like to work with, or a brief
+          personal note. One to two sentences.]
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p class="contact-intro">
+        Open to Marketing Ops/RevOps and Product Marketing roles.
+        Warm intros are great, cold emails work too.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:tillycooper2017@gmail.com" class="btn btn-primary">
+          Email me
+        </a>
+        <a
+          href="https://linkedin.com/in/coopertillotson"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: 6rem 0 5rem;
+  }
+
+  .hero-label {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero h1 {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-sub {
+    color: var(--color-text-muted);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .btn:hover {
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+    color: #fff;
+  }
+
+  .btn-secondary {
+    background: var(--color-tag-bg);
+    color: var(--color-text);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-border);
+    color: var(--color-text);
+  }
+
+  /* Work grid */
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .work-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .work-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.75rem;
+  }
+
+  .work-card--featured {
+    grid-column: 1 / -1;
+    border-color: var(--color-accent);
+    border-width: 2px;
+  }
+
+  .work-tag {
+    display: inline-block;
+    background: var(--color-tag-bg);
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.3rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .work-card h3 {
+    margin-bottom: 0.75rem;
+  }
+
+  .work-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .work-highlights {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .work-highlights li {
+    background: var(--color-tag-bg);
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+  }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .skill-group h3 {
+    margin-bottom: 0.75rem;
+    color: var(--color-accent);
+    font-size: 1.05rem;
+  }
+
+  .skill-group ul {
+    list-style: none;
+  }
+
+  .skill-group li {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .skill-group li:last-child {
+    border-bottom: none;
+  }
+
+  /* About */
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about-content p {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  /* Contact */
+  .contact-intro {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+</style>

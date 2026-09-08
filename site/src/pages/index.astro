@@ -29,19 +29,21 @@ import '../styles/global.css';
     <div class="container">
       <h2>Selected Work</h2>
       <div class="work-grid">
-        <article class="work-card work-card--featured">
+        <a href="/gtm-spec" class="work-card work-card--featured work-card-link">
           <span class="work-tag">Spec Project</span>
-          <h3>[Spec GTM Project Title]</h3>
+          <h3>AI-Assisted Design Handoff for Figma</h3>
           <p>
-            [2-3 sentence summary of the spec GTM project. What was the
-            situation, what did you build, what was the measurable outcome.]
+            A spec GTM strategy for an AI feature that closes the
+            design-to-engineering gap. Covers problem framing, target segment,
+            positioning, competitive landscape, launch plan, and success
+            metrics.
           </p>
           <ul class="work-highlights">
-            <li>[Key metric or deliverable]</li>
-            <li>[Key metric or deliverable]</li>
-            <li>[Key metric or deliverable]</li>
+            <li>Go-to-Market Strategy</li>
+            <li>Product Marketing</li>
+            <li>Competitive Analysis</li>
           </ul>
-        </article>
+        </a>
 
         <article class="work-card">
           <span class="work-tag">CRM / Process</span>
@@ -281,6 +283,18 @@ import '../styles/global.css';
     grid-column: 1 / -1;
     border-color: var(--color-accent);
     border-width: 2px;
+  }
+
+  .work-card-link {
+    color: inherit;
+    text-decoration: none;
+    transition: box-shadow 0.15s;
+  }
+
+  .work-card-link:hover {
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 
   .work-tag {

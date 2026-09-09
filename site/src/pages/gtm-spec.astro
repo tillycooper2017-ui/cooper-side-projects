@@ -17,11 +17,20 @@ import '../styles/global.css';
         the design-to-engineering gap, turning design files into shippable specs
         automatically.
       </p>
+      <nav class="case-nav">
+        <a href="#problem">Problem</a>
+        <a href="#segment">Personas</a>
+        <a href="#positioning">Positioning</a>
+        <a href="#competitive">Landscape</a>
+        <a href="#launch">Launch</a>
+        <a href="#metrics">Metrics</a>
+      </nav>
     </div>
   </section>
 
   <section id="problem">
     <div class="container">
+      <span class="section-label">01</span>
       <h2>Problem & Opportunity</h2>
       <div class="case-content">
         <div class="case-block">
@@ -57,8 +66,9 @@ import '../styles/global.css';
     </div>
   </section>
 
-  <section id="segment">
+  <section id="segment" class="section-alt">
     <div class="container">
+      <span class="section-label">02</span>
       <h2>Target Segment & Buyer Personas</h2>
       <div class="case-content">
         <div class="case-block">
@@ -76,19 +86,22 @@ import '../styles/global.css';
           <h3>Buyer personas</h3>
           <div class="persona-grid">
             <div class="persona-card">
+              <div class="persona-icon">D</div>
               <h4>Design Lead / Head of Design</h4>
               <p class="persona-cares"><strong>Cares about:</strong> Design fidelity surviving handoff, reducing QA burden late in the sprint, protecting the system they've built.</p>
-              <p class="persona-pain"><strong>Current pain:</strong> "We spec everything in Figma and engineers still ask us what the hover state is."</p>
+              <p class="persona-pain">"We spec everything in Figma and engineers still ask us what the hover state is."</p>
             </div>
             <div class="persona-card">
+              <div class="persona-icon">E</div>
               <h4>Engineering Manager</h4>
               <p class="persona-cares"><strong>Cares about:</strong> Spec clarity, fewer Slack interruptions, predictable sprint velocity.</p>
-              <p class="persona-pain"><strong>Current pain:</strong> "My team spends the first day of every ticket reverse-engineering the design."</p>
+              <p class="persona-pain">"My team spends the first day of every ticket reverse-engineering the design."</p>
             </div>
             <div class="persona-card">
+              <div class="persona-icon">V</div>
               <h4>VP Product / CPO</h4>
               <p class="persona-cares"><strong>Cares about:</strong> Shipping velocity, fewer handoff-related bugs reaching QA, tooling consolidation.</p>
-              <p class="persona-pain"><strong>Current pain:</strong> "We're paying for Figma and two handoff tools and still getting inconsistent builds."</p>
+              <p class="persona-pain">"We're paying for Figma and two handoff tools and still getting inconsistent builds."</p>
             </div>
           </div>
         </div>
@@ -109,18 +122,21 @@ import '../styles/global.css';
 
   <section id="positioning">
     <div class="container">
+      <span class="section-label">03</span>
       <h2>Positioning & Messaging</h2>
       <div class="case-content">
         <div class="case-block">
           <h3>Positioning statement</h3>
-          <p>
-            For product teams that ship at scale, Figma AI Handoff turns design
-            files into complete, context-aware engineering specs automatically.
-            Unlike manual redlining or standalone handoff tools, it reads your
-            design system, understands component relationships, and generates
-            the props, states, and responsive behavior engineers actually need,
-            all without leaving Figma.
-          </p>
+          <div class="callout">
+            <p>
+              For product teams that ship at scale, <strong>Figma AI Handoff</strong> turns design
+              files into complete, context-aware engineering specs automatically.
+              Unlike manual redlining or standalone handoff tools, it reads your
+              design system, understands component relationships, and generates
+              the props, states, and responsive behavior engineers actually need,
+              all without leaving Figma.
+            </p>
+          </div>
         </div>
         <div class="case-block">
           <h3>Message by persona</h3>
@@ -130,11 +146,11 @@ import '../styles/global.css';
               <p>"Your design system already defines the spec. Now Figma reads it so you don't have to explain it twice."</p>
             </div>
             <div class="message-row">
-              <span class="message-persona">Engineering Manager</span>
+              <span class="message-persona">Eng Manager</span>
               <p>"Every ticket arrives with the full spec: props, states, spacing, and interaction logic. No more guesswork."</p>
             </div>
             <div class="message-row">
-              <span class="message-persona">VP Product / CPO</span>
+              <span class="message-persona">VP Product</span>
               <p>"One tool for design and handoff. Faster builds, fewer QA cycles, less tooling spend."</p>
             </div>
           </div>
@@ -154,8 +170,9 @@ import '../styles/global.css';
     </div>
   </section>
 
-  <section id="competitive">
+  <section id="competitive" class="section-alt">
     <div class="container">
+      <span class="section-label">04</span>
       <h2>Competitive Landscape</h2>
       <div class="case-content">
         <div class="case-block">
@@ -223,13 +240,17 @@ import '../styles/global.css';
 
   <section id="launch">
     <div class="container">
+      <span class="section-label">05</span>
       <h2>Launch Plan & Channels</h2>
       <div class="case-content">
         <div class="case-block">
           <h3>Phased rollout</h3>
           <div class="phase-grid">
             <div class="phase-card">
-              <span class="phase-label">Phase 1: Private Beta (8 weeks)</span>
+              <div class="phase-header">
+                <span class="phase-number">1</span>
+                <span class="phase-label">Private Beta (8 weeks)</span>
+              </div>
               <ul>
                 <li>20-30 enterprise design teams, hand-selected from top Dev Mode accounts</li>
                 <li>Goal: validate spec accuracy, collect edge cases, refine AI output quality</li>
@@ -237,7 +258,10 @@ import '../styles/global.css';
               </ul>
             </div>
             <div class="phase-card">
-              <span class="phase-label">Phase 2: Public Beta (6 weeks)</span>
+              <div class="phase-header">
+                <span class="phase-number">2</span>
+                <span class="phase-label">Public Beta (6 weeks)</span>
+              </div>
               <ul>
                 <li>Open to all Organization and Enterprise plans with Dev Mode enabled</li>
                 <li>Goal: stress-test at scale, build social proof, generate launch content</li>
@@ -245,7 +269,10 @@ import '../styles/global.css';
               </ul>
             </div>
             <div class="phase-card">
-              <span class="phase-label">Phase 3: GA Launch</span>
+              <div class="phase-header">
+                <span class="phase-number">3</span>
+                <span class="phase-label">GA Launch</span>
+              </div>
               <ul>
                 <li>Config keynote or standalone launch event (Figma has the audience for this)</li>
                 <li>Bundled into Dev Mode seats, driving seat expansion into engineering teams</li>
@@ -279,8 +306,9 @@ import '../styles/global.css';
     </div>
   </section>
 
-  <section id="metrics">
+  <section id="metrics" class="section-alt">
     <div class="container">
+      <span class="section-label">06</span>
       <h2>Success Metrics</h2>
       <div class="case-content">
         <div class="case-block">
@@ -288,19 +316,23 @@ import '../styles/global.css';
           <div class="metrics-grid">
             <div class="metric-card">
               <span class="metric-name">Activation rate</span>
-              <p>% of Dev Mode users who generate at least one AI spec in their first week. Target: 40%+.</p>
+              <span class="metric-target">Target: 40%+</span>
+              <p>% of Dev Mode users who generate at least one AI spec in their first week.</p>
             </div>
             <div class="metric-card">
               <span class="metric-name">Spec volume</span>
-              <p>AI specs generated per active project per week. Measures habitual use, not just trial. Target: 5+ per project.</p>
+              <span class="metric-target">Target: 5+ / project</span>
+              <p>AI specs generated per active project per week. Measures habitual use, not just trial.</p>
             </div>
             <div class="metric-card">
-              <span class="metric-name">Spec accuracy (thumbs up rate)</span>
-              <p>In-product feedback on generated specs. Below 80% signals an accuracy problem that will kill retention.</p>
+              <span class="metric-name">Spec accuracy</span>
+              <span class="metric-target">Floor: 80%+</span>
+              <p>In-product thumbs-up rate on generated specs. Below 80% signals an accuracy problem that kills retention.</p>
             </div>
             <div class="metric-card">
               <span class="metric-name">Handoff cycle time</span>
-              <p>Time from design-complete to engineering-starts. Measured via Dev Mode activity timestamps. Target: 30%+ reduction.</p>
+              <span class="metric-target">Target: -30%</span>
+              <p>Time from design-complete to engineering-starts. Measured via Dev Mode activity timestamps.</p>
             </div>
           </div>
         </div>
@@ -313,7 +345,7 @@ import '../styles/global.css';
             </div>
             <div class="metric-card">
               <span class="metric-name">Enterprise conversion rate</span>
-              <p>Free/Pro organizations upgrading to Organization or Enterprise plans to access AI features. Target: measurable lift in upgrade funnel.</p>
+              <p>Free/Pro organizations upgrading to Organization or Enterprise plans to access AI features.</p>
             </div>
             <div class="metric-card">
               <span class="metric-name">Handoff tool displacement</span>
@@ -327,14 +359,16 @@ import '../styles/global.css';
         </div>
         <div class="case-block">
           <h3>What not to measure (and why)</h3>
-          <p>
-            Lines of code generated. This feature generates specs, not code.
-            Measuring code output would misframe the value proposition and
-            invite unfavorable comparisons with Copilot. The metric that
-            matters is whether the spec was accurate enough that the engineer
-            didn't need to ask a follow-up question. That's the signal
-            that handoff actually worked.
-          </p>
+          <div class="callout callout--warn">
+            <p>
+              <strong>Lines of code generated.</strong> This feature generates specs, not code.
+              Measuring code output would misframe the value proposition and
+              invite unfavorable comparisons with Copilot. The metric that
+              matters is whether the spec was accurate enough that the engineer
+              didn't need to ask a follow-up question. That's the signal
+              that handoff actually worked.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -342,33 +376,38 @@ import '../styles/global.css';
 </Base>
 
 <style>
+  /* Case hero */
   .case-hero {
     padding: 4rem 0 3rem;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -20%, var(--color-accent-subtle) 0%, transparent 60%),
+      var(--color-bg);
   }
 
   .back-link {
     display: inline-block;
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    font-weight: 500;
     margin-bottom: 1.5rem;
+    transition: color 0.15s;
   }
 
   .back-link:hover {
     color: var(--color-accent);
-    text-decoration: none;
   }
 
   .case-tag {
     display: inline-block;
     background: var(--color-accent);
     color: #fff;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.25rem 0.7rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
     border-radius: 0.3rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
   }
 
   .case-hero h1 {
@@ -377,26 +416,77 @@ import '../styles/global.css';
 
   .case-subtitle {
     color: var(--color-text-muted);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     line-height: 1.7;
+    margin-bottom: 2rem;
   }
 
+  .case-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .case-nav a {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 2rem;
+    transition: all 0.15s;
+  }
+
+  .case-nav a:hover {
+    background: var(--color-accent-subtle);
+    border-color: var(--color-accent-light);
+    color: var(--color-accent);
+  }
+
+  /* Section alternation */
+  .section-alt {
+    background: var(--color-bg-alt);
+  }
+
+  /* Case content blocks */
   .case-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
+    margin-top: 1.5rem;
   }
 
   .case-block h3 {
-    color: var(--color-accent);
-    margin-bottom: 0.5rem;
-    font-size: 1.05rem;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
   }
 
   .case-block p {
     color: var(--color-text-muted);
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.75;
+  }
+
+  /* Callout */
+  .callout {
+    background: var(--color-accent-subtle);
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .callout p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .callout--warn {
+    background: var(--color-tag-bg);
+    border-left-color: var(--color-text-light);
   }
 
   /* Persona cards */
@@ -414,45 +504,68 @@ import '../styles/global.css';
 
   .persona-card {
     background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 0.75rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
     padding: 1.5rem;
+    box-shadow: 0 1px 3px var(--color-shadow);
+  }
+
+  .persona-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
   }
 
   .persona-card h4 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: var(--color-accent);
-  }
-
-  .persona-cares,
-  .persona-pain {
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    max-width: none;
+    color: var(--color-text);
   }
 
   .persona-cares {
-    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    max-width: none;
+    margin-bottom: 0.75rem;
   }
 
   .persona-pain {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
     font-style: italic;
+    line-height: 1.6;
+    max-width: none;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border-light);
   }
 
   /* Message grid */
   .message-grid {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
   }
 
   .message-row {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     align-items: baseline;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .message-row:last-child {
+    border-bottom: none;
   }
 
   @media (max-width: 640px) {
@@ -464,17 +577,17 @@ import '../styles/global.css';
 
   .message-persona {
     flex-shrink: 0;
-    width: 10rem;
-    font-size: 0.85rem;
-    font-weight: 600;
+    width: 8rem;
+    font-size: 0.75rem;
+    font-weight: 700;
     color: var(--color-accent);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em;
   }
 
   .message-row p {
     color: var(--color-text-muted);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-style: italic;
     line-height: 1.6;
   }
@@ -482,27 +595,39 @@ import '../styles/global.css';
   /* Competitive table */
   .comp-table-wrapper {
     overflow-x: auto;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 1px 3px var(--color-shadow);
   }
 
   .comp-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
+    background: var(--color-surface);
   }
 
   .comp-table th {
     text-align: left;
     font-weight: 600;
-    color: var(--color-text);
-    padding: 0.75rem 1rem;
-    border-bottom: 2px solid var(--color-border);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-light);
+    padding: 0.85rem 1.25rem;
+    background: var(--color-tag-bg);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .comp-table td {
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--color-border);
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--color-border-light);
     color: var(--color-text-muted);
     line-height: 1.5;
+  }
+
+  .comp-table tr:last-child td {
+    border-bottom: none;
   }
 
   /* Phase cards */
@@ -514,17 +639,37 @@ import '../styles/global.css';
 
   .phase-card {
     background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 0.75rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
     padding: 1.5rem;
+    box-shadow: 0 1px 3px var(--color-shadow);
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .phase-number {
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
 
   .phase-label {
-    display: inline-block;
     font-weight: 600;
     font-size: 0.95rem;
-    color: var(--color-accent);
-    margin-bottom: 0.75rem;
+    color: var(--color-text);
   }
 
   .phase-card ul {
@@ -536,17 +681,21 @@ import '../styles/global.css';
 
   .phase-card li {
     color: var(--color-text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.6;
     padding-left: 1.25rem;
     position: relative;
   }
 
   .phase-card li::before {
-    content: "→";
+    content: "";
     position: absolute;
     left: 0;
-    color: var(--color-accent);
+    top: 0.55rem;
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: var(--color-accent);
   }
 
   /* Channel grid */
@@ -564,20 +713,21 @@ import '../styles/global.css';
 
   .channel-item {
     background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 0.75rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
     padding: 1.25rem;
+    box-shadow: 0 1px 3px var(--color-shadow);
   }
 
   .channel-item strong {
     display: block;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: 0.4rem;
     color: var(--color-text);
   }
 
   .channel-item p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-text-muted);
     line-height: 1.6;
   }
@@ -597,21 +747,33 @@ import '../styles/global.css';
 
   .metric-card {
     background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 0.75rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
     padding: 1.25rem;
+    box-shadow: 0 1px 3px var(--color-shadow);
   }
 
   .metric-name {
     display: block;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .metric-target {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
     color: var(--color-accent);
-    margin-bottom: 0.4rem;
+    background: var(--color-accent-subtle);
+    padding: 0.1rem 0.5rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .metric-card p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-text-muted);
     line-height: 1.6;
   }

@@ -1,0 +1,780 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/global.css';
+---
+
+<Base
+  title="Spec GTM: AI-Assisted Design Handoff | Cooper Tillotson"
+  description="A spec go-to-market strategy for an AI-assisted design-to-engineering handoff feature in Figma. Problem framing, positioning, launch plan, and success metrics."
+>
+  <section class="case-hero">
+    <div class="container">
+      <a href="/" class="back-link">&larr; Back to portfolio</a>
+      <span class="case-tag">Spec Project</span>
+      <h1>AI-Assisted Design Handoff for Figma</h1>
+      <p class="case-subtitle">
+        A spec go-to-market strategy exploring how Figma could use AI to close
+        the design-to-engineering gap, turning design files into shippable specs
+        automatically.
+      </p>
+      <nav class="case-nav">
+        <a href="#problem">Problem</a>
+        <a href="#segment">Personas</a>
+        <a href="#positioning">Positioning</a>
+        <a href="#competitive">Landscape</a>
+        <a href="#launch">Launch</a>
+        <a href="#metrics">Metrics</a>
+      </nav>
+    </div>
+  </section>
+
+  <section id="problem">
+    <div class="container">
+      <span class="section-label">01</span>
+      <h2>Problem & Opportunity</h2>
+      <div class="case-content">
+        <div class="case-block">
+          <h3>The gap</h3>
+          <p>
+            Design and engineering hand off work manually today. Figma files get
+            exported, redlined, and re-explained in Slack/Jira, losing fidelity
+            and context every time. Design intent (spacing, states, interaction
+            logic) doesn't survive the handoff, so engineers rebuild from
+            guesswork and design QA becomes a bottleneck late in the sprint.
+          </p>
+        </div>
+        <div class="case-block">
+          <h3>Why now</h3>
+          <p>
+            Enterprise teams have scaled design systems (component libraries,
+            tokens) but the handoff layer hasn't kept pace. It's still
+            screenshots and comments. AI can now read a design file's structure
+            and generate accurate, context-aware specs (props, states, responsive
+            behavior) automatically, closing that gap for the first time.
+          </p>
+        </div>
+        <div class="case-block">
+          <h3>The opportunity</h3>
+          <p>
+            An AI-assisted handoff feature turns Figma from "where design lives"
+            into "where design ships from," extending Figma's footprint into the
+            engineering workflow. That's defensible market expansion (more seats,
+            deeper lock-in), not just a nice-to-have feature.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="segment" class="section-alt">
+    <div class="container">
+      <span class="section-label">02</span>
+      <h2>Target Segment & Buyer Personas</h2>
+      <div class="case-content">
+        <div class="case-block">
+          <h3>Primary segment</h3>
+          <p>
+            Mid-market and enterprise product teams with 50+ engineers and a
+            dedicated design function. These teams already use Figma at scale,
+            have invested in design systems (tokens, component libraries), and
+            feel the handoff pain most acutely because volume amplifies every
+            miscommunication. They're the teams most likely to pay for Dev Mode
+            seats today and expand into AI-assisted tooling tomorrow.
+          </p>
+        </div>
+        <div class="case-block">
+          <h3>Buyer personas</h3>
+          <div class="persona-grid">
+            <div class="persona-card">
+              <div class="persona-icon">D</div>
+              <h4>Design Lead / Head of Design</h4>
+              <p class="persona-cares"><strong>Cares about:</strong> Design fidelity surviving handoff, reducing QA burden late in the sprint, protecting the system they've built.</p>
+              <p class="persona-pain">"We spec everything in Figma and engineers still ask us what the hover state is."</p>
+            </div>
+            <div class="persona-card">
+              <div class="persona-icon">E</div>
+              <h4>Engineering Manager</h4>
+              <p class="persona-cares"><strong>Cares about:</strong> Spec clarity, fewer Slack interruptions, predictable sprint velocity.</p>
+              <p class="persona-pain">"My team spends the first day of every ticket reverse-engineering the design."</p>
+            </div>
+            <div class="persona-card">
+              <div class="persona-icon">V</div>
+              <h4>VP Product / CPO</h4>
+              <p class="persona-cares"><strong>Cares about:</strong> Shipping velocity, fewer handoff-related bugs reaching QA, tooling consolidation.</p>
+              <p class="persona-pain">"We're paying for Figma and two handoff tools and still getting inconsistent builds."</p>
+            </div>
+          </div>
+        </div>
+        <div class="case-block">
+          <h3>Why not smaller teams?</h3>
+          <p>
+            Startups and small teams feel handoff friction too, but they solve it
+            with proximity. The designer sits next to the engineer. AI-generated
+            specs add the most value when teams are distributed, cross-functional,
+            and operating at a scale where synchronous communication breaks down.
+            Smaller teams become the expansion wedge after enterprise proves the
+            model.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="positioning">
+    <div class="container">
+      <span class="section-label">03</span>
+      <h2>Positioning & Messaging</h2>
+      <div class="case-content">
+        <div class="case-block">
+          <h3>Positioning statement</h3>
+          <div class="callout">
+            <p>
+              For product teams that ship at scale, <strong>Figma AI Handoff</strong> turns design
+              files into complete, context-aware engineering specs automatically.
+              Unlike manual redlining or standalone handoff tools, it reads your
+              design system, understands component relationships, and generates
+              the props, states, and responsive behavior engineers actually need,
+              all without leaving Figma.
+            </p>
+          </div>
+        </div>
+        <div class="case-block">
+          <h3>Message by persona</h3>
+          <div class="message-grid">
+            <div class="message-row">
+              <span class="message-persona">Design Lead</span>
+              <p>"Your design system already defines the spec. Now Figma reads it so you don't have to explain it twice."</p>
+            </div>
+            <div class="message-row">
+              <span class="message-persona">Eng Manager</span>
+              <p>"Every ticket arrives with the full spec: props, states, spacing, and interaction logic. No more guesswork."</p>
+            </div>
+            <div class="message-row">
+              <span class="message-persona">VP Product</span>
+              <p>"One tool for design and handoff. Faster builds, fewer QA cycles, less tooling spend."</p>
+            </div>
+          </div>
+        </div>
+        <div class="case-block">
+          <h3>Category framing</h3>
+          <p>
+            This isn't "design-to-code" (a category with trust issues and mixed
+            results). It's AI-powered spec generation: the step between design
+            and code that currently lives in Slack threads and outdated Confluence
+            pages. Framing it as spec intelligence, not code generation, keeps
+            expectations grounded and positions the feature as augmenting
+            engineers rather than replacing their judgment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="competitive" class="section-alt">
+    <div class="container">
+      <span class="section-label">04</span>
+      <h2>Competitive Landscape</h2>
+      <div class="case-content">
+        <div class="case-block">
+          <h3>Current alternatives</h3>
+          <div class="comp-table-wrapper">
+            <table class="comp-table">
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>What they do</th>
+                  <th>Gap</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Zeplin</strong></td>
+                  <td>Dedicated handoff/inspect tool, syncs from Figma</td>
+                  <td>Static specs, no AI, adds a second tool to the workflow</td>
+                </tr>
+                <tr>
+                  <td><strong>Anima / Locofy</strong></td>
+                  <td>Design-to-code generation from Figma plugins</td>
+                  <td>Skips the spec layer entirely, output quality varies, engineers distrust generated code</td>
+                </tr>
+                <tr>
+                  <td><strong>Figma Dev Mode</strong></td>
+                  <td>Built-in inspect, measurements, code snippets</td>
+                  <td>Manual, no contextual understanding (doesn't know about states, responsive rules, or component logic)</td>
+                </tr>
+                <tr>
+                  <td><strong>Storybook</strong></td>
+                  <td>Component documentation and visual testing</td>
+                  <td>Downstream tool, doesn't bridge the design-to-spec gap</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="case-block">
+          <h3>Figma's advantage</h3>
+          <p>
+            Figma owns the design file. Every competitor in this space is
+            working from an export or a plugin integration, which means they're
+            always one sync behind and missing context. An AI feature built into
+            Figma reads the source of truth directly: layer structure, component
+            instances, variants, auto-layout rules, and design tokens. No other
+            player can match that depth of access, and it gets stronger as teams
+            adopt more of Figma's design system tooling.
+          </p>
+        </div>
+        <div class="case-block">
+          <h3>Defensibility risk</h3>
+          <p>
+            The main threat isn't another handoff tool. It's IDE-side AI
+            (Copilot, Cursor) getting good enough at interpreting screenshots
+            that engineers skip the spec entirely. Figma's counter: structured
+            data beats pixel interpretation. A Figma-native AI reads the
+            component tree, not a flat image, so it can generate specs that
+            are accurate at the property level, not just visually close.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="launch">
+    <div class="container">
+      <span class="section-label">05</span>
+      <h2>Launch Plan & Channels</h2>
+      <div class="case-content">
+        <div class="case-block">
+          <h3>Phased rollout</h3>
+          <div class="phase-grid">
+            <div class="phase-card">
+              <div class="phase-header">
+                <span class="phase-number">1</span>
+                <span class="phase-label">Private Beta (8 weeks)</span>
+              </div>
+              <ul>
+                <li>20-30 enterprise design teams, hand-selected from top Dev Mode accounts</li>
+                <li>Goal: validate spec accuracy, collect edge cases, refine AI output quality</li>
+                <li>Feedback loop: weekly office hours + in-product thumbs up/down on generated specs</li>
+              </ul>
+            </div>
+            <div class="phase-card">
+              <div class="phase-header">
+                <span class="phase-number">2</span>
+                <span class="phase-label">Public Beta (6 weeks)</span>
+              </div>
+              <ul>
+                <li>Open to all Organization and Enterprise plans with Dev Mode enabled</li>
+                <li>Goal: stress-test at scale, build social proof, generate launch content</li>
+                <li>Capture beta testimonials and before/after workflow comparisons</li>
+              </ul>
+            </div>
+            <div class="phase-card">
+              <div class="phase-header">
+                <span class="phase-number">3</span>
+                <span class="phase-label">GA Launch</span>
+              </div>
+              <ul>
+                <li>Config keynote or standalone launch event (Figma has the audience for this)</li>
+                <li>Bundled into Dev Mode seats, driving seat expansion into engineering teams</li>
+                <li>Enterprise sales motion: "design system ROI" narrative for CPO/VP Eng</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="case-block">
+          <h3>Channel strategy</h3>
+          <div class="channel-grid">
+            <div class="channel-item">
+              <strong>Product-led</strong>
+              <p>In-app prompts in Dev Mode inspect panel. "See the AI-generated spec for this component" as a contextual entry point.</p>
+            </div>
+            <div class="channel-item">
+              <strong>Community</strong>
+              <p>Figma Community templates showcasing AI Handoff. Design system maintainers as advocates (they benefit most).</p>
+            </div>
+            <div class="channel-item">
+              <strong>Content</strong>
+              <p>"Handoff is broken" narrative via blog, YouTube (workflow comparisons), and design Twitter/LinkedIn. Lead with the pain, not the feature.</p>
+            </div>
+            <div class="channel-item">
+              <strong>Enterprise sales</strong>
+              <p>ROI calculator: time saved per handoff x tickets per sprint x engineering hourly cost. Make the business case self-serve for champions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="metrics" class="section-alt">
+    <div class="container">
+      <span class="section-label">06</span>
+      <h2>Success Metrics</h2>
+      <div class="case-content">
+        <div class="case-block">
+          <h3>Leading indicators (first 90 days post-GA)</h3>
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-name">Activation rate</span>
+              <span class="metric-target">Target: 40%+</span>
+              <p>% of Dev Mode users who generate at least one AI spec in their first week.</p>
+            </div>
+            <div class="metric-card">
+              <span class="metric-name">Spec volume</span>
+              <span class="metric-target">Target: 5+ / project</span>
+              <p>AI specs generated per active project per week. Measures habitual use, not just trial.</p>
+            </div>
+            <div class="metric-card">
+              <span class="metric-name">Spec accuracy</span>
+              <span class="metric-target">Floor: 80%+</span>
+              <p>In-product thumbs-up rate on generated specs. Below 80% signals an accuracy problem that kills retention.</p>
+            </div>
+            <div class="metric-card">
+              <span class="metric-name">Handoff cycle time</span>
+              <span class="metric-target">Target: -30%</span>
+              <p>Time from design-complete to engineering-starts. Measured via Dev Mode activity timestamps.</p>
+            </div>
+          </div>
+        </div>
+        <div class="case-block">
+          <h3>Business outcomes (6-12 months)</h3>
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-name">Dev Mode seat expansion</span>
+              <p>Engineering teams adding Dev Mode seats after AI Handoff launches. The core revenue thesis: AI pulls engineers deeper into Figma.</p>
+            </div>
+            <div class="metric-card">
+              <span class="metric-name">Enterprise conversion rate</span>
+              <p>Free/Pro organizations upgrading to Organization or Enterprise plans to access AI features.</p>
+            </div>
+            <div class="metric-card">
+              <span class="metric-name">Handoff tool displacement</span>
+              <p>Accounts that drop Zeplin or similar tools within 6 months of adoption. Validates the consolidation narrative.</p>
+            </div>
+            <div class="metric-card">
+              <span class="metric-name">Net revenue retention</span>
+              <p>NRR impact from AI-driven seat expansion. The number that tells leadership this feature is a growth lever, not a cost center.</p>
+            </div>
+          </div>
+        </div>
+        <div class="case-block">
+          <h3>What not to measure (and why)</h3>
+          <div class="callout callout--warn">
+            <p>
+              <strong>Lines of code generated.</strong> This feature generates specs, not code.
+              Measuring code output would misframe the value proposition and
+              invite unfavorable comparisons with Copilot. The metric that
+              matters is whether the spec was accurate enough that the engineer
+              didn't need to ask a follow-up question. That's the signal
+              that handoff actually worked.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Case hero */
+  .case-hero {
+    padding: 4rem 0 3rem;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -20%, var(--color-accent-subtle) 0%, transparent 60%),
+      var(--color-bg);
+  }
+
+  .back-link {
+    display: inline-block;
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    transition: color 0.15s;
+  }
+
+  .back-link:hover {
+    color: var(--color-accent);
+  }
+
+  .case-tag {
+    display: inline-block;
+    background: var(--color-accent);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .case-hero h1 {
+    margin-bottom: 1rem;
+  }
+
+  .case-subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .case-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .case-nav a {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 2rem;
+    transition: all 0.15s;
+  }
+
+  .case-nav a:hover {
+    background: var(--color-accent-subtle);
+    border-color: var(--color-accent-light);
+    color: var(--color-accent);
+  }
+
+  /* Section alternation */
+  .section-alt {
+    background: var(--color-bg-alt);
+  }
+
+  /* Case content blocks */
+  .case-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .case-block h3 {
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .case-block p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  /* Callout */
+  .callout {
+    background: var(--color-accent-subtle);
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .callout p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .callout--warn {
+    background: var(--color-tag-bg);
+    border-left-color: var(--color-text-light);
+  }
+
+  /* Persona cards */
+  .persona-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .persona-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .persona-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px var(--color-shadow);
+  }
+
+  .persona-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .persona-card h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .persona-cares {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    max-width: none;
+    margin-bottom: 0.75rem;
+  }
+
+  .persona-pain {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    line-height: 1.6;
+    max-width: none;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  /* Message grid */
+  .message-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .message-row {
+    display: flex;
+    gap: 1.25rem;
+    align-items: baseline;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .message-row:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 640px) {
+    .message-row {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  }
+
+  .message-persona {
+    flex-shrink: 0;
+    width: 8rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .message-row p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* Competitive table */
+  .comp-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 1px 3px var(--color-shadow);
+  }
+
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    background: var(--color-surface);
+  }
+
+  .comp-table th {
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-light);
+    padding: 0.85rem 1.25rem;
+    background: var(--color-tag-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .comp-table td {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--color-border-light);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .comp-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Phase cards */
+  .phase-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .phase-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px var(--color-shadow);
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .phase-number {
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .phase-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-text);
+  }
+
+  .phase-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .phase-card li {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .phase-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  /* Channel grid */
+  .channel-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .channel-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .channel-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px var(--color-shadow);
+  }
+
+  .channel-item strong {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: var(--color-text);
+  }
+
+  .channel-item p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  /* Metrics grid */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .metric-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px var(--color-shadow);
+  }
+
+  .metric-name {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .metric-target {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    background: var(--color-accent-subtle);
+    padding: 0.1rem 0.5rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .metric-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+</style>

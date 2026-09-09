@@ -14,12 +14,18 @@ Personal portfolio site and side projects. Built and maintained with Claude Code
 - **Work browser (GitHub connector):** read and light edits only. No local build.
 - **Mobile:** drive Claude Code remotely, or edit via the connector.
 ## Local dev
-Stack: _TBD — pick in the first Claude Code session (Astro or plain static recommended)._
- 
+
+**Stack:** Astro 5 (static output, zero JS shipped to the browser).
+
+```bash
+cd site
+npm install        # install dependencies
+npm run dev        # start dev server at localhost:4321
+npm run build      # production build to site/dist/
+npm run preview    # preview the production build locally
 ```
-# install / dev / build commands added here once the stack is set
-```
- 
+
 ## Deploy
-Target: free static host (GitHub Pages / Netlify / Vercel). Decide in the first session.
+
+Target: free static host (GitHub Pages, Netlify, or Vercel). Deploy the `site/dist/` directory.
  

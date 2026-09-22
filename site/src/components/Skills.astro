@@ -1,0 +1,44 @@
+---
+// Ordered per positioning guardrails: defensible strengths first,
+// automation as a supporting differentiator, SQL framed as in-progress only.
+const groups = [
+  {
+    name: 'CRM and systems',
+    items: ['CRM implementation and migration', 'Lead routing and lifecycle stages', 'Pipeline reporting', 'Process documentation'],
+  },
+  {
+    name: 'Competitive intelligence',
+    items: ['Competitor monitoring', 'Positioning and messaging analysis', 'Sales enablement and battlecards'],
+  },
+  {
+    name: 'SEO and analytics',
+    items: ['Technical and on-page SEO', 'GEO / AIO (AI search visibility)', 'Schema and structured data', 'GA4', 'Google Search Console', 'SEMrush'],
+  },
+  {
+    name: 'Automation',
+    items: ['Scheduled reporting and monitoring workflows, built with Python scripts', 'GSC and GA4 weekly report pipeline'],
+  },
+];
+---
+<section id="skills" class="section" aria-labelledby="skills-title">
+  <div class="container">
+    <h2 id="skills-title">Skills and stack</h2>
+    <div class="groups">
+      {groups.map((g) => (
+        <div class="group">
+          <h3>{g.name}</h3>
+          <ul>{g.items.map((item) => <li>{item}</li>)}</ul>
+        </div>
+      ))}
+    </div>
+    <p class="learning"><strong>Currently learning:</strong> SQL. Progress lives in the SQL portfolio project.</p>
+  </div>
+</section>
+
+<style>
+  .groups { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+  @media (min-width: 40rem) { .groups { grid-template-columns: repeat(2, 1fr); } }
+  ul { margin: 0; padding-left: 1.1rem; }
+  li { margin-bottom: 0.25rem; }
+  .learning { margin-top: 2rem; color: var(--muted); }
+</style>

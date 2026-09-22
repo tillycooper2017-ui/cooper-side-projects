@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import Skills from '../components/Skills.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import { SITE } from '../data/site';
+import { getCaseStudies } from '../lib/case-studies';
+import { graph, personNode, websiteNode, PERSON_ID, WEBSITE_ID } from '../lib/schema';
+import { absoluteUrl, url } from '../lib/url';
+
+const studies = (await getCaseStudies()).slice(0, 4);
+
+const jsonLd = graph(personNode(), websiteNode(), {
+  '@type': 'ProfilePage',
+  '@id': `${absoluteUrl()}#profile`,
+  url: absoluteUrl(),
+  name: SITE.name,
+  isPartOf: { '@id': WEBSITE_ID() },
+  mainEntity: { '@id': PERSON_ID() },
+});
+---
+<Base title={SITE.name} jsonLd={jsonLd}>
+  <Hero />
+
+  <section class="section" aria-labelledby="work-title">
+    <div class="container">
+      <h2 id="work-title">Selected work</h2>
+      {studies.length > 0 ? (
+        <ul class="card-grid">
+          {studies.map((entry) => <CaseStudyCard entry={entry} />)}
+        </ul>
+      ) : (
+        <p>Case studies are being written up. Check back soon.</p>
+      )}
+      <p class="all"><a href={url('work/')}>All case studies →</a></p>
+    </div>
+  </section>
+
+  <Skills />
+  <About />
+  <Contact />
+</Base>
+
+<style>
+  .all { margin-top: 1.5rem; font-weight: 600; }
+</style>

@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { url } from '../lib/url';
+
+interface Props { entry: CollectionEntry<'case-studies'>; headingLevel?: 'h2' | 'h3' }
+const { entry, headingLevel: Heading = 'h3' } = Astro.props;
+const { title, summary, context, results, draft, featured } = entry.data;
+const lead = results[0];
+---
+<li class:list={['card', { featured }]}>
+  <article>
+    <p class="eyebrow">
+      {context}
+      {draft && <span class="draft-badge">Draft</span>}
+    </p>
+    <Heading><a href={url(`work/${entry.id}/`)}>{title}</a></Heading>
+    <p class="summary">{summary}</p>
+    {lead && <p class="lead-metric"><strong>{lead.metric}</strong> {lead.label}</p>}
+  </article>
+</li>
+
+<style>
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; position: relative; }
+  .card:focus-within, .card:hover { border-color: var(--accent); }
+  .featured { grid-column: 1 / -1; }
+  a { color: var(--text); text-decoration: none; }
+  /* Whole card is clickable via the heading link. */
+  a::after { content: ''; position: absolute; inset: 0; }
+  a:hover { text-decoration: underline; }
+  .summary { color: var(--muted); }
+  .lead-metric { margin: 0; }
+  .lead-metric strong { font-size: 1.4rem; color: var(--accent); }
+  .eyebrow { display: flex; gap: 0.5rem; align-items: center; }
+</style>

@@ -37,6 +37,6 @@ The site is interview ammo and a credibility signal, not the primary hiring leve
 5. **Contact** — email + LinkedIn.
 
 ## First session TODO
-- [ ] Pick the stack and scaffold it in `/site`.
-- [ ] Fill in the README local-dev and deploy commands once the stack is set.
+- [x] Pick the stack and scaffold it in `/site`.
+- [x] Fill in the README local-dev and deploy commands once the stack is set.
 - [ ] Draft the spec GTM project as the flagship case study.

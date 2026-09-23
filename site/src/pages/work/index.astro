@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import CaseStudyCard from '../../components/CaseStudyCard.astro';
+import { SITE } from '../../data/site';
+import { getCaseStudies } from '../../lib/case-studies';
+import { graph, personNode, breadcrumbNode, WEBSITE_ID } from '../../lib/schema';
+import { absoluteUrl } from '../../lib/url';
+
+const studies = await getCaseStudies();
+const description = `Case studies from ${SITE.name}: CRM implementation, competitive intelligence, SEO, and go-to-market planning. Each one covers challenge, approach, results, and the artifact.`;
+
+const jsonLd = graph(
+  personNode(),
+  {
+    '@type': 'CollectionPage',
+    '@id': `${absoluteUrl('work/')}#page`,
+    url: absoluteUrl('work/'),
+    name: 'Case studies',
+    description,
+    isPartOf: { '@id': WEBSITE_ID() },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: studies.map((entry, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: absoluteUrl(`work/${entry.id}/`),
+        name: entry.data.title,
+      })),
+    },
+  },
+  breadcrumbNode([
+    { name: 'Home', path: '' },
+    { name: 'Case studies', path: 'work/' },
+  ]),
+);
+---
+<Base title="Case studies" description={description} jsonLd={jsonLd}>
+  <section class="section">
+    <div class="container">
+      <h1>Case studies</h1>
+      <p class="lede">Challenge, approach, result, artifact. Numbers first.</p>
+      {studies.length > 0 ? (
+        <ul class="card-grid list">
+          {studies.map((entry) => <CaseStudyCard entry={entry} headingLevel="h2" />)}
+        </ul>
+      ) : (
+        <p>Case studies are being written up. Check back soon.</p>
+      )}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .list { margin-top: 2rem; }
+</style>

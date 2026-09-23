@@ -1,0 +1,21 @@
+---
+import { SITE } from '../data/site';
+import { url } from '../lib/url';
+---
+<section class="hero section" aria-labelledby="hero-title">
+  <div class="container">
+    <p class="eyebrow">Targeting: {SITE.targetRoles.join(' · ')}</p>
+    <h1 id="hero-title">{SITE.name}</h1>
+    <p class="lede">{SITE.positioning}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href={url('work/')}>See the work</a>
+      {SITE.resumePath && <a class="btn btn-secondary" href={url(SITE.resumePath)} download>Download resume</a>}
+      <a class="btn btn-secondary" href={url('#contact')}>Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero { padding-block: clamp(3rem, 10vw, 6rem); }
+  .lede { font-size: clamp(1.15rem, 2.5vw, 1.35rem); }
+</style>

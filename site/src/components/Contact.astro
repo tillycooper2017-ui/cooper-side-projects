@@ -9,7 +9,7 @@ import { url } from '../lib/url';
     <ul class="links">
       <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
       <li><a href={SITE.linkedin} rel="me">LinkedIn</a></li>
-      <li><a href={url(SITE.resumePath)} download>Resume (PDF)</a></li>
+      {SITE.resumePath && <li><a href={url(SITE.resumePath)} download>Resume (PDF)</a></li>}
     </ul>
   </div>
 </section>

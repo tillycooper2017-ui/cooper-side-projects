@@ -1,5 +1,4 @@
 // Single source of truth for identity, links, and positioning copy.
-// TODO(cooper): replace every value marked TODO before the first deploy.
 
 export const SITE = {
   name: 'Cooper Tillotson',
@@ -9,9 +8,10 @@ export const SITE = {
   targetRoles: ['Marketing Operations', 'RevOps', 'Product Marketing'],
   description:
     'Cooper Tillotson: marketing coordinator moving into Marketing Ops, RevOps, and Product Marketing. Case studies in CRM implementation, competitive intelligence, and SEO.',
-  email: 'you@example.com', // TODO(cooper)
-  linkedin: 'https://www.linkedin.com/in/TODO', // TODO(cooper)
-  // Drop the PDF at site/public/resume.pdf.
-  resumePath: 'resume.pdf',
+  email: 'tillycooper2017@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/cooper-tillotson-marketing-expert',
+  // Resume links stay hidden until this is set. To turn them on, drop the PDF at
+  // site/public/resume.pdf and change this to 'resume.pdf'.
+  resumePath: null as string | null,
   locale: 'en_US',
 } as const;

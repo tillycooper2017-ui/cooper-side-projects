@@ -9,7 +9,7 @@ import { url } from '../lib/url';
     <p class="lede">{SITE.positioning}</p>
     <div class="btn-row">
       <a class="btn btn-primary" href={url('work/')}>See the work</a>
-      <a class="btn btn-secondary" href={url(SITE.resumePath)} download>Download resume</a>
+      {SITE.resumePath && <a class="btn btn-secondary" href={url(SITE.resumePath)} download>Download resume</a>}
       <a class="btn btn-secondary" href={url('#contact')}>Get in touch</a>
     </div>
   </div>

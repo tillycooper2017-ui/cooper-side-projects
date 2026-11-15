@@ -19,7 +19,7 @@ Stack: **Astro 7** (static output, zero client JS), `@astrojs/sitemap`, JSON-LD 
 ```bash
 cd site
 npm install        # first time only
-npm run dev        # http://localhost:4321/cooper-side-projects/
+npm run dev        # http://localhost:4321/portfolio/
 npm run check      # type-check .astro files and the case-study schema
 npm run build      # production build to site/dist
 npm run preview    # serve the production build locally
@@ -32,7 +32,9 @@ npm run preview    # serve the production build locally
  
 ## Deploy
 Target: **GitHub Pages**, via GitHub Actions (`.github/workflows/deploy.yml`).
-Live URL: https://tillycooper2017-ui.github.io/cooper-side-projects/
+Live URL: https://tillycooper2017-ui.github.io/portfolio/
+
+The URL path follows the repo name automatically (see `site/astro.config.mjs`), so renaming the repo is safe. The old URL stops working after a rename.
 
 One-time setup: repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 

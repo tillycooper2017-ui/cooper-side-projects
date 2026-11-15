@@ -7,7 +7,7 @@ Personal portfolio site and side projects. Built and maintained with Claude Code
 |---|---|
 | `/site` | Portfolio site source (Astro, static output) |
 | `/projects` | Source material for case studies / spec projects featured on the site |
-| `CLAUDE.md` | Project conventions + positioning guardrails for Claude Code — read this first |
+| `CLAUDE.md` | Project conventions + positioning guardrails for Claude Code. Read this first. |
  
 ## Working across machines
 - **Home machine (Claude Code):** build, run locally, commit and push.

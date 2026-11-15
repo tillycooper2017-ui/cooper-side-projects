@@ -25,7 +25,8 @@ npm run build      # production build to site/dist
 npm run preview    # serve the production build locally
 ```
 
-- **Case studies:** one Markdown file each in `site/src/content/case-studies/`. The schema in `site/src/content.config.ts` requires Challenge / Approach / Result / Artifact.
+- **Case studies:** one Markdown file each in `site/src/content/case-studies/`. Every file is a card on the home page. Set `writeup: true` to also build a detail page; the schema in `site/src/content.config.ts` then requires the problem, approach and results fields.
+- **Stats, tools:** the hero stat row lives in `site/src/data/site.ts`, the "Tools I built" section in `site/src/data/tools.ts`.
 - **Drafts:** `draft: true` shows in `npm run dev` only and is left out of production builds. Flip to `false` to publish.
 - **Identity and links:** name, email, LinkedIn, and resume path live in `site/src/data/site.ts`. Resume PDF goes at `site/public/resume.pdf`.
  

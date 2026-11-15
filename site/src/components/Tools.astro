@@ -1,0 +1,39 @@
+---
+import { TOOLS } from '../data/tools';
+---
+<section id="tools" class="section" aria-labelledby="tools-title">
+  <div class="container">
+    <h2 id="tools-title">Tools I built</h2>
+    <p class="lede">Internal apps built with AI-assisted, low-code tools.</p>
+    <ul class="card-grid tools">
+      {TOOLS.map((t) => (
+        <li class="tool">
+          <p class="eyebrow">{t.kind}</p>
+          <h3>{t.name}</h3>
+          <dl>
+            <div><dt>Problem</dt><dd>{t.problem}</dd></div>
+            <div>
+              <dt>What I built</dt>
+              <dd>
+                {t.built}
+                {t.bullets && <ul>{t.bullets.map((b) => <li>{b}</li>)}</ul>}
+              </dd>
+            </div>
+            {t.result && <div><dt>Result</dt><dd>{t.result}</dd></div>}
+          </dl>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .tools { margin-top: 1.5rem; }
+  .tool { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+  .tool:last-child { grid-column: 1 / -1; }
+  dl { margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  dt { font-size: 0.8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  dd { margin: 0; }
+  dd ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+  dd li { margin-bottom: 0.35rem; }
+</style>

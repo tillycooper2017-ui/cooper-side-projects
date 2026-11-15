@@ -7,3 +7,8 @@ export async function getCaseStudies() {
   );
   return entries.sort((a, b) => a.data.order - b.data.order);
 }
+
+/** Case studies that have a full detail page. */
+export async function getWriteups() {
+  return (await getCaseStudies()).filter((e) => e.data.writeup);
+}

@@ -1,21 +1,29 @@
 ---
-import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import { SITE } from '../../data/site';
-import { getCaseStudies } from '../../lib/case-studies';
+import { getWriteups } from '../../lib/case-studies';
 import { graph, personNode, breadcrumbNode, PERSON_ID, WEBSITE_ID } from '../../lib/schema';
 import { absoluteUrl, url } from '../../lib/url';
 
 export async function getStaticPaths() {
-  const studies = await getCaseStudies();
-  return studies.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+  const studies = await getWriteups();
+  return studies.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: { entry, next: studies[i + 1] ?? null },
+  }));
 }
 
-const { entry } = Astro.props;
-const { title, summary, role, context, date, tags, challenge, approach, results, artifact, draft } = entry.data;
-const { Content } = await render(entry);
+const { entry, next } = Astro.props;
+const { title, category, lede, role, timeline, tools, headline, date, tags, problem, approach, results, learned, draft } = entry.data;
 const pageUrl = absoluteUrl(`work/${entry.id}/`);
-const artifactHref = artifact.href && !/^https?:/.test(artifact.href) ? url(artifact.href) : artifact.href;
+const description = lede ?? entry.data.summary;
+
+const meta = [
+  { label: 'Role', value: role },
+  { label: 'Timeline', value: timeline },
+  { label: 'Tools', value: tools },
+  { label: 'Headline result', value: headline },
+].filter((m) => m.value);
 
 const jsonLd = graph(
   personNode(),
@@ -24,7 +32,7 @@ const jsonLd = graph(
     '@id': `${pageUrl}#article`,
     url: pageUrl,
     headline: title,
-    description: summary,
+    description,
     datePublished: date.toISOString(),
     author: { '@id': PERSON_ID() },
     publisher: { '@id': PERSON_ID() },
@@ -39,80 +47,79 @@ const jsonLd = graph(
   ]),
 );
 ---
-<Base title={title} description={summary} ogType="article" jsonLd={jsonLd} noindex={draft}>
+<Base title={title} description={description} ogType="article" jsonLd={jsonLd} noindex={draft}>
   <article class="section">
-    <div class="container">
+    <div class="container narrow">
       <nav aria-label="Breadcrumb" class="crumbs">
         <ol>
           <li><a href={url()}>Home</a></li>
           <li><a href={url('work/')}>Case studies</a></li>
-          <li aria-current="page">{title}</li>
+          <li aria-current="page">{category}</li>
         </ol>
       </nav>
 
       <header class="head">
-        <p class="eyebrow">{context} {draft && <span class="draft-badge">Draft</span>}</p>
+        <p class="eyebrow">Case study · {category} {draft && <span class="draft-badge">Draft</span>}</p>
         <h1>{title}</h1>
-        <p class="lede">{summary}</p>
-        <dl class="meta">
-          <div><dt>Role</dt><dd>{role}</dd></div>
-          <div><dt>Date</dt><dd><time datetime={date.toISOString().slice(0, 10)}>{date.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}</time></dd></div>
-        </dl>
+        <p class="lede">{lede}</p>
       </header>
 
-      <div class="prose">
-        <section aria-labelledby="challenge">
-          <h2 id="challenge">Challenge</h2>
-          <p>{challenge}</p>
+      <dl class="meta">
+        {meta.map((m) => <div><dt>{m.label}</dt><dd>{m.value}</dd></div>)}
+      </dl>
+
+      <section aria-labelledby="problem">
+        <h2 id="problem">The problem</h2>
+        <p>{problem}</p>
+      </section>
+
+      <section aria-labelledby="approach">
+        <h2 id="approach">What I did</h2>
+        <ul>{approach?.map((step) => <li>{step}</li>)}</ul>
+      </section>
+
+      <section aria-labelledby="results">
+        <h2 id="results">The result</h2>
+        <ul class="results">
+          {results?.map((r) => (
+            <li><strong class="metric">{r.metric}</strong> <span>{r.label}</span></li>
+          ))}
+        </ul>
+      </section>
+
+      {learned && (
+        <section aria-labelledby="learned" class="learned">
+          <h2 id="learned">What I learned</h2>
+          <p>{learned}</p>
         </section>
-
-        <section aria-labelledby="approach">
-          <h2 id="approach">Approach</h2>
-          <ol>{approach.map((step) => <li>{step}</li>)}</ol>
-        </section>
-
-        <section aria-labelledby="results" class="results-block">
-          <h2 id="results">Result</h2>
-          <ul class="results">
-            {results.map((r) => (
-              <li><strong class="metric">{r.metric}</strong> <span>{r.label}</span></li>
-            ))}
-          </ul>
-        </section>
-
-        <section aria-labelledby="artifact">
-          <h2 id="artifact">Artifact</h2>
-          <h3>{artifact.title}</h3>
-          <p>{artifact.description}</p>
-          {artifactHref && <p><a href={artifactHref}>View the artifact →</a></p>}
-        </section>
-
-        <Content />
-      </div>
-
-      {tags.length > 0 && (
-        <ul class="tag-list tags" aria-label="Tags">{tags.map((t) => <li class="tag">{t}</li>)}</ul>
       )}
 
-      <p class="back"><a href={url('work/')}>← All case studies</a> · <a href={url('#contact')}>Talk to {SITE.name.split(' ')[0]}</a></p>
+      <nav class="foot" aria-label="More case studies">
+        <a href={url('#work')}>← Back to all work</a>
+        {next
+          ? <a class="btn btn-primary" href={url(`work/${next.id}/`)}>Next case study: {next.data.category}</a>
+          : <a class="btn btn-primary" href={url('#contact')}>Talk to {SITE.name.split(' ')[0]}</a>}
+      </nav>
     </div>
   </article>
 </Base>
 
 <style>
+  .narrow { max-width: 52rem; }
   .crumbs ol { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0 0 2rem; font-size: 0.9rem; color: var(--muted); }
   .crumbs li + li::before { content: '/'; margin-right: 0.4rem; }
   .head { margin-bottom: 2rem; }
-  .meta { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; margin: 0; }
-  .meta dt { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .eyebrow { color: var(--accent); }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1rem; margin: 0 0 2.5rem; padding: 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+  .meta dt { font-size: 0.8rem; color: var(--muted); }
   .meta dd { margin: 0; font-weight: 600; }
-  /* Boxed so the numbers stand out when skimming. */
-  .results-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 2rem; }
-  .results { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
-  .metric { display: block; font-size: clamp(1.8rem, 5vw, 2.4rem); line-height: 1.1; color: var(--accent); }
-  .prose section { margin-bottom: 2rem; }
-  .prose ol { padding-left: 1.2rem; }
-  .prose li { margin-bottom: 0.5rem; }
-  .tags { margin-top: 1rem; }
-  .back { margin-top: 2.5rem; font-weight: 600; }
+  section { margin-bottom: 2.5rem; }
+  section ul { padding-left: 1.2rem; }
+  section li { margin-bottom: 0.5rem; }
+  section .results { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+  section .results li { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem; margin: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+  .metric { font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.15; color: var(--accent); }
+  .results span { color: var(--muted); font-size: 0.95rem; }
+  .learned { background: var(--surface); border-radius: var(--radius); padding: 1.5rem; }
+  .foot { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 2rem; font-weight: 600; }
 </style>

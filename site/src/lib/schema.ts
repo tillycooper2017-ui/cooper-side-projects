@@ -14,12 +14,14 @@ export function personNode() {
     url: absoluteUrl(),
     sameAs: [SITE.linkedin],
     knowsAbout: [
+      'B2B marketing',
+      'Marketing operations',
+      'Product marketing',
+      'Channel and partner marketing',
       'CRM implementation',
-      'Competitive intelligence',
       'Search engine optimization',
-      'Generative engine optimization',
+      'Answer engine optimization',
       'Web analytics',
-      'Structured data',
       'Marketing automation',
     ],
   };

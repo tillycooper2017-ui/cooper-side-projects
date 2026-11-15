@@ -1,16 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
 import CaseStudyCard from '../components/CaseStudyCard.astro';
+import Tools from '../components/Tools.astro';
 import Skills from '../components/Skills.astro';
 import About from '../components/About.astro';
 import Contact from '../components/Contact.astro';
 import { SITE } from '../data/site';
 import { getCaseStudies } from '../lib/case-studies';
 import { graph, personNode, websiteNode, PERSON_ID, WEBSITE_ID } from '../lib/schema';
-import { absoluteUrl, url } from '../lib/url';
+import { absoluteUrl } from '../lib/url';
 
-const studies = (await getCaseStudies()).slice(0, 4);
+const studies = await getCaseStudies();
 
 const jsonLd = graph(personNode(), websiteNode(), {
   '@type': 'ProfilePage',
@@ -23,26 +25,24 @@ const jsonLd = graph(personNode(), websiteNode(), {
 ---
 <Base title={SITE.name} jsonLd={jsonLd}>
   <Hero />
+  <Stats />
 
-  <section class="section" aria-labelledby="work-title">
+  <section id="work" class="section" aria-labelledby="work-title">
     <div class="container">
-      <h2 id="work-title">Selected work</h2>
-      {studies.length > 0 ? (
-        <ul class="card-grid">
-          {studies.map((entry) => <CaseStudyCard entry={entry} />)}
-        </ul>
-      ) : (
-        <p>Case studies are being written up. Check back soon.</p>
-      )}
-      <p class="all"><a href={url('work/')}>All case studies →</a></p>
+      <h2 id="work-title">Case studies</h2>
+      <p class="lede">Problem, what I did, and the result.</p>
+      <ul class="card-grid list">
+        {studies.map((entry) => <CaseStudyCard entry={entry} />)}
+      </ul>
     </div>
   </section>
 
+  <Tools />
   <Skills />
   <About />
   <Contact />
 </Base>
 
 <style>
-  .all { margin-top: 1.5rem; font-weight: 600; }
+  .list { margin-top: 1.5rem; }
 </style>

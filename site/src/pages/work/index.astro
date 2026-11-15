@@ -7,7 +7,7 @@ import { graph, personNode, breadcrumbNode, WEBSITE_ID } from '../../lib/schema'
 import { absoluteUrl } from '../../lib/url';
 
 const studies = await getCaseStudies();
-const description = `Case studies from ${SITE.name}: CRM implementation, competitive intelligence, SEO, and go-to-market planning. Each one covers challenge, approach, results, and the artifact.`;
+const description = `Case studies from ${SITE.name}: SEO and AI search, CRM rollout, product launches, partner enablement, and trade show design.`;
 
 const jsonLd = graph(
   personNode(),
@@ -23,7 +23,7 @@ const jsonLd = graph(
       itemListElement: studies.map((entry, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        url: absoluteUrl(`work/${entry.id}/`),
+        url: entry.data.writeup ? absoluteUrl(`work/${entry.id}/`) : absoluteUrl('work/'),
         name: entry.data.title,
       })),
     },
@@ -38,7 +38,7 @@ const jsonLd = graph(
   <section class="section">
     <div class="container">
       <h1>Case studies</h1>
-      <p class="lede">Challenge, approach, result, artifact. Numbers first.</p>
+      <p class="lede">Problem, what I did, and the result.</p>
       {studies.length > 0 ? (
         <ul class="card-grid list">
           {studies.map((entry) => <CaseStudyCard entry={entry} headingLevel="h2" />)}
